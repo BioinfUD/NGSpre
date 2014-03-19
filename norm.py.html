@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Normalization</title>
+	<link rel="stylesheet" href="css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+</head>
+
+<body>
+	<div class="info">Normalization</div>
+	<form action="index.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="proc" value="norm.py" />
+		<ul>
+			<li>
+				<label>Upload a file:</label>
+				<input name="file" id="file" type="file"  />
+				<INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="2000048">
+				<br><br><br><div> * FASTA/FASTQ file with sequences of nucleotides and aminoacids. </div>
+			</li>
+			<li> 
+				<label>File ID:</label>
+				<input type="text" name="idfile" size="40">
+				<br><br><div> * If you want to use a previous output file, you should insert the ID of the file. </div>
+			</li>
+			<li>
+				<label>Coverage:</label>
+				<input type="number" name="coverage" min="10" max="40">
+				<br><br><div> * Desired coverage of the sequences (30x recommended). </div>
+			</li>
+			<li>
+				<label>K-mer:</label>
+				<input type="number" name="kmer" min="10" max="44">
+				<br><br><div> * Word size to use for normalization. </div>
+			</li>
+			<li>
+				<label>Email:</label>
+				<input type="email" name="email" size="40">
+				<br><br><div> * We will send you an email when your process is finished. </div>
+			</li>
+			<li>
+				<input type="submit" value="Submit">
+			</li>
+		</ul>
+	</form>	
+	<div class="desc">
+		<b>Inputs:</b><br>
+		FASTa/FASTQ file, a coverage and a K-mer.
+		<br><b>Process:</b><br>
+		This step will reduce their sequences to a given coverage so that when assembling this work will be less computationally intensive (takes less time).
+		<br><b>Output:</b><br>
+		FASTA/FASTQ normalized file.
+	</div>
+</body>
+
+</html>

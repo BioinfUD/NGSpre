@@ -1,0 +1,45 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>UpdateDBs.py</title>
+	<link rel="stylesheet" href="css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+</head>
+
+<body>
+	<div class="info">Update DBs</div>
+	<form action="index.php" method="post" enctype="multipart/form-data">
+		<INPUT TYPE="hidden" name="proc" value="updatedbs.py">
+		<ul>
+			<li>
+				<label>Email:</label>
+				<input type="email" name="email">
+				<br><br><div> * We will send you an email when your process is finished. </div>
+			</li>
+			<li>
+				<input type="submit" value="Submit">
+			</li>
+		</ul>
+	</form>
+	<div class="desc">
+		<b>Processes:</b><br>
+		A first process connects to servers NCBI and Swisprot in order to download the databases, another process generates the indices of downloaded files for BLAST, a third process connects to the FTP at Georgetown University in order to download a file that maps the various types of identifiers onto GO terms.
+		<br><b>Output:</b><br>
+		FASTA-format sequence files together with their corresponding BLAST indi-ces, a file that maps GO terms onto sequence identifiers.
+	</div>
+</body>
+
+</html>
