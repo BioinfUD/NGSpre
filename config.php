@@ -4,7 +4,7 @@
 
 // MAFA CONFIG
 
-define('DIR_SOFT','/NFS/Cristian/Prepro');
+define('DIR_SOFT','/var/www/html/NGSpre/scripts');
 
 define('DIR_UPLOADS','/var/www/html/test/uploads');
 
@@ -18,9 +18,9 @@ define('MYSQL_HOST','127.0.0.1');
 
 define('MYSQL_USER','root');
 
-define('MYSQL_PASS','6nu');
+define('MYSQL_PASS','database_password');
 
-define('MYSQL_DB','test');
+define('MYSQL_DB','database_name');
 
 ?>
 
