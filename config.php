@@ -4,7 +4,7 @@
 
 // MAFA CONFIG
 
-define('DIR_SOFT','/var/www/html/NGSpre/scripts');
+define('DIR_SOFT','/var/www/html/NGSpre/Scripts');
 
 define('DIR_UPLOADS','/var/www/html/test/uploads');
 
