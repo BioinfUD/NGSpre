@@ -33,7 +33,7 @@ while(True):
 			sender = 'admin@bioinfud.com'
 			receivers = [command['email']]
 			message = """
-			Here is a link to your process output: http://200.69.103.29:21050/test/outputs/{0}
+			Here is a link to your process output: http://200.69.103.29:21050/NGSpre/outputs/{0}
 			The ID of your process is: {0}
 			""".format(command['dir'])
 			try:
