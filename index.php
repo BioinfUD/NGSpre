@@ -3,6 +3,7 @@ require_once('config.php');
 $funct=NULL;
 if($_GET){
 	$funct=$_GET['f'];
+	$tab=$_GET['tab'];
 }
 ?>
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ if($_GET){
         $("input:checkbox, input:radio, input:file, select").uniform();
       });
     </script>
+
 	<style>
 body{
 	font-family: Arial, Helvetica, sans-serif;
@@ -55,12 +57,12 @@ body{
 	<td style="vertical-align: top;">
 		<div id='cssmenu'>
 <ul>
-   <li class='active'><a href='index.php?f='><span>Home</span></a></li>
+   <li class=''><a href='index.php?f='><span>Home</span></a></li>
    <li class='has-sub last'><a href='#'><span>Format Conversion</span></a>
-      <ul>
-         <li><a href='index.php?f=bam2fasta.py.html'><span>bam to fasta</span></a></li>
-         <li><a href='index.php?f=bam2fastq.py.html'><span>bam to fastq</span></a></li>
-         <li class='last'><a href='index.php?f=fastq2fasta.py.html'><span>fastq to fasta</span></a></li>
+      <ul <?php if($tab && $tab=='c'){print 'style="display:block"';}?>>
+         <li><a href='index.php?f=bam2fasta.py.html&tab=c'><span>bam to fasta</span></a></li>
+         <li><a href='index.php?f=bam2fastq.py.html&tab=c'><span>bam to fastq</span></a></li>
+         <li class='last'><a href='index.php?f=fastq2fasta.py.html&tab=c'><span>fastq to fasta</span></a></li>
       </ul>
    </li>
    <li><a href='index.php?f=qual.py.html'><span>Quality stats</span></a></li>
@@ -525,5 +527,6 @@ body{
 	</td>
 	</tr>
 </table>
+
 </body>
 </html>
